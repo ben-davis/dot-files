@@ -8,7 +8,7 @@
 #   GIT CONFIGURATION
 #   -------------------------------
 
-source ~/.git-completions.sh
+source ~/.git-completions
 
 
 #   -------------------------------
