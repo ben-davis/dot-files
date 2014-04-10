@@ -9,6 +9,7 @@
 #   -------------------------------
 
 source ~/.git-completions
+source ~/.git-prompt-info
 
 
 #   -------------------------------

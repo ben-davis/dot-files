@@ -8,16 +8,11 @@
 #   ENVIRONMENT CONFIGURATION
 #   -------------------------------
 
-export PATH=/Library/PostgreSQL/9.3/bin/:$PATH:/Applications/Autodesk/maya2014/Maya.app/Contents/bin/:/Users/bendavis/Qt/5.1.1/clang_64_bin/:/System/Library/Frameworks/Python.framework/Versions/2.7/bin/:/Library/PostgreSQL/9.3/bin/:/opt/local/bin/:$HOME/Dropbox/dev/scripts
-export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
-export PYTHONPATH=/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/
+export PATH=$PATH:$HOME/local/bin
 
-export WORKON_HOME="$HOME/Dropbox/dev/.venvs"
-source /usr/local/bin/virtualenvwrapper.sh
 
 #   -------------------------------
 #   ALIASES
 #   -------------------------------
 
-alias cdesra='cd $HOME/Dropbox/dev/git/esra'
 alias subl="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
