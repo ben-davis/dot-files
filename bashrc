@@ -23,8 +23,10 @@ export PS1='\[\033[0;36m\]\u\[\033[00;36m\]@\[\033[00;36m\]\h: \[\033[00;34m\]\[
 #   ALIASES
 #   -------------------------------
 
-alias ll='ls -lFAh | grep -v .DS_Store'
-alias ls='ls -G'
+function ll() { ls -lFh --color=always "$@" | grep -v .DS_Store ;}
+alias ls='ls --color=always'
+alias tree='tree -C'
+alias tmux="tmux -2"
 
 #   -------------------------------
 #   CUSTOM CONFIGURATION

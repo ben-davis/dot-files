@@ -1,20 +1,40 @@
-" Pathogen
-filetype off " Pathogen needs to run before plugin indent on
-call pathogen#infect()
-call pathogen#helptags() " generate helptags for everything in 'runtimepath'
-filetype plugin indent on
+" Vundle
+set nocompatible              " be iMproved, required
+filetype off                  " required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-nnoremap <F5> :GundoToggle<CR>
-nnoremap <F6> :NERDTreeToggle<CR>
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+Plugin 'kien/ctrlp.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'vim-scripts/ZoomWin'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'itchyny/lightline.vim'
+
+Plugin 'klen/python-mode'
+Plugin 'davidhalter/jedi-vim'
+
+Plugin 'noah/vim256-color'
+Plugin 'daylerees/colour-schemes', { 'rtp': 'vim/' }
+Plugin 'junegunn/seoul256.vim'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Customisation
+
+colorscheme seoul256
 
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
+inoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
-colorscheme desert
 
 " recognise files
 filetype on
@@ -22,7 +42,7 @@ filetype plugin on
 filetype indent on
 
 " syntax
-syntax enable
+syntax on
 
 " ruler
 set ruler
@@ -100,3 +120,51 @@ nnoremap <silent> <C-Down> <c-w>j
 set statusline+=%F
 set laststatus=2
 hi StatusLine ctermfg=black ctermbg=white
+
+" Plugin Customisation
+
+" Tagbar
+nnoremap <leader>b :TagbarToggle<CR>
+
+" Ctrlp
+let g:ctrlp_extensions = ['tag', 'buffertag']
+nnoremap <C-e> :CtrlPTag<CR>
+nnoremap <C-r> :CtrlPBufTag<CR>
+
+" python-mode
+" Disable rope, so we can use jedi
+let g:pymode_rope = 0
+
+" Documentation
+let g:pymode_doc = 1
+let g:pymode_doc_key = 'K'
+
+"Linting
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8"
+" Auto check on save
+let g:pymode_lint_write = 1
+
+" Support virtualenv
+let g:pymode_virtualenv = 1
+
+" Enable breakpoints plugin
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_key = '<leader>b'
+
+" syntax highlighting
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+" Don't autofold code
+let g:pymode_folding = 0
+
+let g:pymode_options_max_line_length = 120
+let g:pymode_trim_whitespaces = 1
+let g:pymode_indent = 1
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }

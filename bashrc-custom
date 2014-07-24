@@ -8,7 +8,14 @@
 #   ENVIRONMENT CONFIGURATION
 #   -------------------------------
 
-export PATH=$PATH:$HOME/local/bin
+export PATH=/usr/local/bin:$HOME/local/bin:$HOME/dev/bin:$PATH
+export WORKON_HOME=~/dev/.venvs
+source /usr/local/bin/virtualenvwrapper.sh
+export EDITOR=vim
+export SUBLIME_PROJECTS_DIR=$HOME/dev/configuration/sublime-projects/
+
+# Replaces BSD coreutils with GNU alternatives
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 
 
 #   -------------------------------
